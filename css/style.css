@@ -11,16 +11,17 @@ body {
 	width: 100%;
 	background: #333333;
 	color: #ffffff;
-	font-size: 16px;
-	line-height: 1.8em;
+	font-size: 15px;
+	line-height: 1.6em;
 	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3 {font-family: 'Courgette', cursive;}
+h1, h2 {font-family: 'Courgette', cursive;}
 h1 {font-size: 70px;}
+h3 {font-size: 18px; font-weight: 700;}
 img {max-width: 100%;}
 a, a:link, a:visited, a:active {color: #eeeeee; text-decoration: none;}
 a:hover {color: #eeeeee; text-decoration: none;}
@@ -30,18 +31,20 @@ a:hover {color: #eeeeee; text-decoration: none;}
 
 a.btn-primary {
 	padding: .35rem 1.25rem;
-	background: #eeeeee;
-	color: #222222;
+	background: rgba(0,0,0,.15);
+	color: #fff;
+	font-size: 15px;
 	border: solid 2px #ffffff;
-	border-radius: 0;
+	border-radius: 3px;
 	font-weight: 500;
 	transition: all .75s ease;
+	box-shadow: none;
 }
 
 a.btn-primary:hover {
-	background: #222222;
-	color: #eee;
-	border-color: #101010;
+	background: #eeeeee;
+	color: #222222;
+	border-color: #fefefe;
 }
 
 /* ------------------------------
@@ -94,10 +97,7 @@ HERO / TITLE
 .hero {
 	margin-top: -70px;
 	height: calc(100vh - 230px);
-	background: #eeeeee url(../images/bg-hero.jpg) center top no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
+	background: #eeeeee url(../images/bg-hero.jpg) center center no-repeat;
 	background-size: cover;
 	color: #ffffff;
 }
@@ -147,16 +147,34 @@ CONTENT
 
 .cta {padding: 0;}
 .card {display: flex; border: none; border-radius: 0; align-items: center;}
-.cta-tips .card {background: #ef6c00 url(../images/bg-cta01.jpg) left top no-repeat;  background-size: cover;}
-.cta-items .card {background: #558b2f url(../images/bg-cta02.jpg) right top no-repeat; background-size: cover;}
+.cta-tips .card {background: #222222 url(../images/bg-cta01.jpg) left top no-repeat;  background-size: cover;}
+.cta-items .card {background: #222222 url(../images/bg-cta02.jpg) right top no-repeat; background-size: cover;}
 .card-body {display: flex; height: auto; flex-direction: column; justify-content: center; align-items: center;}
 .card-title {padding: 0 10px; margin-bottom: .5rem;}
 
-/* ------------------------------
-FOOTER
------------------------------- */
+.internal-content {
+	margin-top: -70px;
+	padding-top: 140px;
+	height: 100vh;
+	background: #1d1e20 url(../images/bg-tips.jpg) left top no-repeat;
+	background-size: cover;
+}
 
+.internal-content.photos {background: #3b3c3e url(../images/bg-photos.jpg) center top no-repeat; background-size: cover;}
+.title {height: 120px;}
+.title-content {text-align: center;}
+.page-title {font-size: 46px; text-shadow: 5px 3px 0px rgba(0,0,0,.2);}
 
+.text-content {
+	margin: 0 0 20px;
+	padding: 20px 30px;
+	min-height: 460px;
+	background: rgba(0,0,0,.25);
+	border: solid 2px rgba(255,255,255,.15);
+}
+
+.text-content  h2 {margin-bottom: 1.25rem; font-size: 26px;}
+.figure-caption {color: #fff;}
 
 /* ------------------------------
 MEDIA QUERIES
@@ -167,6 +185,8 @@ MEDIA QUERIES
 }
 
 @media screen and (max-width: 991px) {
+	.internal-content {height: auto; min-height: 100vh;}
+	.text-content {min-height: auto;}
 }
 
 @media screen and (max-width: 768px) {
@@ -204,6 +224,7 @@ MEDIA QUERIES
 	.header-nav.nav-text li {padding: 10px;}
 	.header-nav.nav-text li:not(:last-child) {border-bottom: solid 1px #eee;}
 	.header-nav.nav-text li a {color: #222;}
+	.video-embed iframe {height: 300px;}
 }
 
 @media (max-width: 414px) {
@@ -213,4 +234,5 @@ MEDIA QUERIES
 	.index-content {height: 170px;}
 	.cta .card-title {margin-bottom: 15px;}
 	.cta .card-text {display: none;}
+	.video-embed iframe {height: 230px;}
 }
